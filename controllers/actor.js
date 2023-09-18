@@ -7,7 +7,7 @@ router.get('/data/seed', async(req, res) =>{
     await Promise.all([Actor.deleteMany()])
     const actors = await Actor.insertMany(actorSeedData)
     const actorIds = actors.map(actor => actor._id)
-    res.render(actors)
+    res.redirect('/actors')
 })
 
 //home route for all actors
