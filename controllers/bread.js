@@ -6,6 +6,11 @@ router.get('/', async (req,res) => {
     const breads = await Bread.find()
     const bakers = await baker.find()
     res.render('index', {breads, bakers})
+
+    //
+    const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=8a84e44e1b62f0e80accee95d9a91cd0')
+    const data = await response.json()
+    console.log(data.results[0].title)
 })
 
 router.get('/new', async (req,res) => {
