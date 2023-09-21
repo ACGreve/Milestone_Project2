@@ -21,6 +21,12 @@ movies.get('/', async(req, res)=>{//this route works fine
   res.render('index', {movies})
 })
 
+//Carousel
+movies.get('/carousel', async (req, res) => {
+  const movies = await Movie.find()
+  res.render('example', {movies})
+})
+
 //Create a movie
 movies.post('/', async (req, res)=>{//this route needs work. It does post but without the body even though i put a subject in the body of postman
   console.log("I was hit")
