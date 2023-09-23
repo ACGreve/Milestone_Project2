@@ -12,6 +12,21 @@ Users can also search for their favorite movies and save to their favorites list
 Our app  includes CRUD logic for ratings and reviews .
 The inspiration for this app is IMDB. </p>
 
+<h1>Development Languages Used</h1>
+<ol>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ol>
+
+<h1>Development Helpers</h1>
+<ol>
+<li>React</li>
+<li>React-Bootstrap</h1>
+<li>Express</li>
+<li>Mongo DB</li>
+</ol>
+
 <h1>How to install and Run the Imago Vocis</h1>
 <ol>
 <li>Go to the green <>Code button and copy the https link </li>
