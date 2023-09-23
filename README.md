@@ -4,9 +4,11 @@
 Imago Vocis
 
 <h1>Description</h1>
-<p>Imago Vocis is a movie rate and review page . This is a MERN stack application with many different developer languages in use . It was screated with MVP in mind . Minimum Viable Product.
+<p>Imago Vocis is a movie rate and review page . This is a MERN stack application with many different developer languages in use . It was created with MVP in mind . Minimum Viable Product.
 
-Users of Imago Vocis can find their favoirite movies with a simple search. 
+Users of Imago Vocis can find their favoirite movies with a simple search of the title.
+
+Users can also add a movie the wide data base 
 Users can also search for their favorite movies and save to their favorites list . Movies can be organized into categories . Eventually with time alloted we would like to biuld upon this app and have search by actors and even ratings. 
 
 Our app  includes CRUD logic for ratings and reviews .
