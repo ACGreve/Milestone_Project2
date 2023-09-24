@@ -9,9 +9,9 @@ Imago Vocis
 Users of Imago Vocis can find their favoirite movies with a simple search of the title.
 
 Users can also add a movie the wide data base 
-Users can also search for their favorite movies and save to their favorites list . Movies can be organized into categories . Eventually with time alloted we would like to biuld upon this app and have search by actors and even ratings. 
+Users can also search for their favorite movies and save to their favorites list . Movies can be organized into categories . Eventually with time alloted we would like to build upon this app and have search by actors and even ratings. 
 
-Our app  includes CRUD logic for ratings and reviews .
+Our app  includes CRUD logic for movies and reviews .
 The inspiration for this app is IMDB. </p>
 
 <h1>Development Languages Used</h1>
