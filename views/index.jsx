@@ -7,7 +7,7 @@ function Index ({ movies, trendingMovies }) {
     const trendingDisplay = trendingMovies.results.map(movie => {
         return (
                 <div className='white' key={movie.id}>
-                    <a href={`/movies/${movie.id}`}>
+                    <a href={`https://image.tmdb.org/t/p/original`+movie.poster_path}>
                         {movie.title}
                     </a>
                 </div>
@@ -16,8 +16,10 @@ function Index ({ movies, trendingMovies }) {
 
     const posterDisplay = trendingMovies.results.map(movie => {
         return (
-            <div id='poster' key={movie._id}>
+            <div id='poster' key={movie.id}>
+                <li>
                     {movie.poster_path}
+                    </li>
             </div>
         )        
     })
@@ -64,31 +66,6 @@ function Index ({ movies, trendingMovies }) {
 
       <Default>
          <h2>Trending Movies</h2>
-        <Carousel>
-            <Carousel.Item>
-                <img src={`https://image.tmdb.org/t/p/original`+posterDisplay[0].props.children}/>
-                <Carousel.Caption>
-                <h3>{trendingDisplay[0]}</h3>
-                <p>{overviewDisplay[0]}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={`https://image.tmdb.org/t/p/original`+posterDisplay[1].props.children} alt={altDisplay[1]}/>
-                <Carousel.Caption>
-                <h3>{trendingDisplay[1]}</h3>
-                <p>{overviewDisplay[1]}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img src={`https://image.tmdb.org/t/p/original`+posterDisplay[2].props.children} alt={altDisplay[2]}/>
-                <Carousel.Caption>
-                <h3>{trendingDisplay[2]}</h3>
-                <p>{overviewDisplay[0]}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
-        <h1>Test</h1>
-        <h5>{movieDisplay}</h5>
         <h5>{trendingDisplay}</h5>
       </Default>
       </html>
