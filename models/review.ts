@@ -1,6 +1,4 @@
-const mongoose = require('mongoose')
-
-const reviewSchema = new mongoose.Schema({
+const reviewSchema: any = new mongoose.Schema({
 title:String,
 name: String,
 comment: String,

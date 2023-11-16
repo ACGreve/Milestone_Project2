@@ -1,20 +1,20 @@
-const movies = require('express').Router()
+const movies: any = require('express').Router()
 const { actorSeed } = require('../models/actorSeedData')
-const Movie = require('../models/movie')
-const movieseedData = require('../models/movieSeedData')
+const Movie: any = require('../models/movie')
+const movieseedData: any = require('../models/movieSeedData')
 
 
 //Seed data route
 movies.get('/data/seed', async (req, res)=>{
   await Promise.all([Movie.deleteMany()])
-   const movies = await Movie.insertMany(movieseedData)
-  const movieIds = movies.map(movie => movie._id)
+   const movies: any = await Movie.insertMany(movieseedData)
+  const movieIds: any = movies.map(movie => movie._id)
   res.redirect('/movies')
 
 })
 
 //Home Route for all the movies
-movies.get('/', async(req, res)=>{//this route works fine
+movies.get('/', async(req: any, res: any)=>{//this route works fine
   const API = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=8a84e44e1b62f0e80accee95d9a91cd0')
    const trendingMovies = await API.json()
   const movies = await Movie.find()
@@ -22,23 +22,23 @@ movies.get('/', async(req, res)=>{//this route works fine
 })
 
 //Render new movie page
-movies.get('/new', async (req, res)=>{
+movies.get('/new', async (req: any, res: any)=>{
   res.render('newMovie')// 
 })
 
 //Get favorites pages
-movies.get('/favorites', async (req, res)=>{
+movies.get('/favorites', async (req: any, res: any)=>{
   res.render('favorites')//page pending formatting
 })
 
 //Create a movie
-movies.post('/', async (req, res)=>{//this route needs work. It does post but without the body even though i put a subject in the body of postman
+movies.post('/', async (req: any, res:any)=>{//this route needs work. It does post but without the body even though i put a subject in the body of postman
  await Movie.create(req.body)
     res.status(303).redirect('/movies')
 })
 
 //Get a specific movie page - API NEEDS WORK
-movies.get('/:id', async (req, res)=>{
+movies.get('/:id', async (req: any, res: any)=>{
   // const API = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=8a84e44e1b62f0e80accee95d9a91cd0')
   // trendingMovies = await API.json()
   const {id}= req.params
@@ -49,21 +49,21 @@ movies.get('/:id', async (req, res)=>{
 })
 
 //Get edit page for movie
-movies.get('/:id/edit', async (req, res)=>{
+movies.get('/:id/edit', async (req: any, res: any)=>{
   const {id}= req.params
   let movie = await Movie.findById(id)
   res.render('movieEdit', {movie})// moviesEdit needs to be created
 })
 
 //Delete movie
-movies.delete('/:id', async (req, res)=>{
+movies.delete('/:id', async (req:any, res: any)=>{
   const {id} = req.params
  await Movie.findByIdAndDelete(id)
   res.redirect('/movies')
 })
 
 //Update movie
-movies.put('/:id', async (req, res)=>{
+movies.put('/:id', async (req: any, res: any)=>{
   const {id} = req.params
   await Movie.findByIdAndUpdate(id, req.body)
   res.status(303).redirect(`/movies/${id}`)

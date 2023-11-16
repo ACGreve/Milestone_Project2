@@ -1,12 +1,12 @@
 //Current date object info From google search how to get the current date in javascript
-let today = new Date()
-let day = String(today.getDate()).padStart(2, '0')
-let month = String(today.getMonth()+1).padStart(2, '0')
-let fullYear = today.getFullYear()
+let today: any = new Date()
+let day: any = String(today.getDate()).padStart(2, '0')
+let month: any = String(today.getMonth()+1).padStart(2, '0')
+let fullYear: any = today.getFullYear()
 
 //how to get current time in javascript from Google search
-let time = new Date()
-let currentTime = time.getHours() + ':' + time.getMinutes() + ":" + time.getSeconds()
+let time: any = new Date()
+let currentTime: any = time.getHours() + ':' + time.getMinutes() + ":" + time.getSeconds()
 
 today= `${month}/${day}/${fullYear} at ${currentTime}`
 console.log(today)

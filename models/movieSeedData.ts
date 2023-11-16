@@ -1,7 +1,7 @@
-const Movie = require('../models/movie')
+import Movie from '../models/movie';
 const { json, response } = require("express");
 
-async function movieSeed(){
+async function movieSeed(): Promise<any>{
   const options = {
     method: 'GET',
     headers: {

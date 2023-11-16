@@ -79,7 +79,7 @@
 //     actorSeed
 // }
 
-async function actorSeed(){ 
+async function actorSeed(): Promise<any>{ 
     const options = {
         method: 'GET',
         headers: {

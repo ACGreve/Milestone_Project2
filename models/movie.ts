@@ -15,7 +15,7 @@ const { boolean } = require('webidl-conversions')
   /// from youtube channel Programming experience
  
 // }
-const movieSchema = new mongoose.Schema({
+const movieSchema: any = new mongoose.Schema({
   success: Boolean,
   adult: Boolean,
   backdrop_path: String,
